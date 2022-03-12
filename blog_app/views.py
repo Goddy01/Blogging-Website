@@ -59,4 +59,4 @@ class DraftListView(LoginRequiredMixin, ListView):
     redirect_field_name = reverse_lazy('blog_app:post_detail')
 
     def get_queryset(self):
-        return Post.objects.filter((date_published___isnull=True).order_by('date_created')
+        return Post.objects.filter(date_published___isnull=True).order_by('date_created')

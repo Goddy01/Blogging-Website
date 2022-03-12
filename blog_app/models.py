@@ -8,6 +8,9 @@ class RegisterProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_pic = models.ImageField(blank=True, null=True, upload_to='profile_pics')
 
+    def __str__(self):
+        return self.user.username
+
 class Post(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=256)

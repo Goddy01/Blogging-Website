@@ -2,13 +2,15 @@ from django import forms
 from blog_app.models import Comment, Post, RegisterProfile
 
 class RegisterForm(forms.ModelForm):
+    password1 = forms.CharField(widget=forms.PasswordInput, label='Password')
+    password2 = forms.CharField(widget=forms.PasswordInput, label='Repeat Password')
     class Meta():
         model = RegisterProfile
-        fields = '__all__'
+        fields = ['first_name', 'last_name', 'username', 'password1', 'password2', 'email']
 
         # This is to connect these widget to my css styling by using their class names created here
         widgets = {
-            **dict.fromkeys(['first_name','last_name','username','email','password','password'], forms.TextInput(attrs={'class':'textinputclass'})), # Assigning of one value to multiple dictionary keys
+            **dict.fromkeys(['first_name','last_name','username','email','password1','password2'], forms.TextInput(attrs={'class':'textinputclass'})), # Assigning one value to multiple dictionary keys
             'profile_pic':forms.ImageField(attrs={'class':'profilepictureinput'}),
         }
 

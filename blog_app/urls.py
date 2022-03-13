@@ -1,12 +1,11 @@
 from django.urls import re_path
-from blog_app.views import AboutView, PostListView, PostDetailView, CreatePostView, UpdatePostView, DeletePostView, DeletePostView, CreateProfileView, dele
-from blog_site.blog_app.views import DeleteProfileDeleteProfileView, DeleteProfileView, add_comment_to_post, comment_remove, publish_post
+from blog_app.views import AboutView, PostListView, PostDetailView, CreatePostView, UpdatePostView, DeletePostView, DeletePostView, CreateProfileView
+from blog_site.blog_app.views import DeleteProfileView, add_comment_to_post, comment_remove, publish_post
 
 app_name = 'blog_app'
 
 urlpatterns = [
     re_path(r'^about/$', AboutView.as_view(), name='about'),
-    # re_path(r'^register/$', RegisterProfileView.as_view(), name='register'),
     re_path(r'^$', PostListView.as_view(), name='post_list'),
     re_path(r'^post/(?P<pk>\d+)/$', PostDetailView.as_view(), name='detail'),
     re_path(r'^post/new_post/$', CreatePostView.as_view(), name='create_post'),

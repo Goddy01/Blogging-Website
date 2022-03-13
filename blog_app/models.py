@@ -18,14 +18,6 @@ class Profile(models.Model):
     def __str__(self):
         return self.user
 
-# class CategoryTag(models.Model):
-#     tag = models.CharField(max_length=30)
-
-#     def get_absolute
-
-#     def __str__(self):
-#         return self.tag
-
 class Post(models.Model):
     author = models.ForeignKey(Profile, on_delete=models.CASCADE)
     title = models.CharField(max_length=128)

@@ -1,5 +1,5 @@
 from django import forms
-from blog_app.models import Comment, Post, Profile, CategoryTag
+from blog_app.models import Comment, Post, Profile
 
 class ProfileForm(forms.ModelForm):
     password1 = forms.CharField(widget=forms.PasswordInput, label='Password')
@@ -7,23 +7,15 @@ class ProfileForm(forms.ModelForm):
     class Meta():
         model = Profile
         fields = ['first_name', 'last_name', 'username', 'email', 'linkedin', 'instgram', 'github', 'password1', 'password2']
-        # fields = '__all__'
 
         # This is to connect these widgets to the css styling by using their class names created here
         widgets = {
             **dict.fromkeys(['first_name','last_name','username'], forms.TextInput(attrs={'class':'textinputclass'})), # Assigning one value to multiple dictionary keys
-            # 'profile_pic':forms.ImageField(attrs={'class':'profilepictureinput'}),
+            'profile_pic':forms.ImageField(attrs={'class':'profilepictureinput'}),
             'email':forms.EmailInput(attrs={'class':'emailinputclass'}),
             **dict.fromkeys(['password1', 'password2'], forms.PasswordInput(attrs={'class':'passwordinputclass'})),
             **dict.fromkeys(['linkedin', 'instagram', 'github'], forms.URLInput(attrs={'class':'urlfieldclass'}))
         }
-
-# class CategoryTagForm(forms.ModelForm):
-#     class Meta():
-#         model = CategoryTag
-#         fields = ['tag']
-
-#         widgets = {'tag':forms.TextInput(attrs={'class':'textinputclass'})}
 
 class PostForm(forms.ModelForm):
     class Meta():

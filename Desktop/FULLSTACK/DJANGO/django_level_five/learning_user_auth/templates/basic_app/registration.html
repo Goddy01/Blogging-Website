@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends "basic_app/base.html" %} 
+{% load static %} 
+{% block title%}Registration{% endblock %} 
+{% block body_block %}
+
+<!-- <div class="overflow-auto"> -->
+<div class="mt-4 p-5 bg-secondary text-white rounded mb-5">
+{% if registered %}
+<h1>Thanks for registering!!!</h1>
+{% else %}
+<h1>Register Here</h1>
+<h3>Fill in the form below:</h3>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %} 
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Register" />
+</form>
+{% endif %}
+</div>
+<!-- </div> -->
+
+{% endblock %}

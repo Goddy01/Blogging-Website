@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>University Website</title>
+        <link rel="stylesheet" href="UniversityWebsite.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/v4-shims.css">
+        <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> -->
+    </head>
+    <body>
+        <section class="sub-header">
+            <nav>
+                <a href="UniversityWebsite.html"><img src="UW_img/logo.png" alt="school logo"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">ABOUT</a></li>
+                        <li><a href="">COURSE</a></li>
+                        <li><a href="">BLOG</a></li>
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+
+            <h1>About Us</h1>
+        </section>
+
+        <!-- -----about us content----- -->
+        <section class="about-us">
+            <div class="row">
+                <div class="about-col">
+                    <h1>We are the World's Biggest University</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione deleniti unde ipsa totam veritatis, non rerum
+                        obcaecati eligendi voluptas. Quisquam repudiandae debitis aliquam perspiciatis dicta sunt esse commodi. Quaerat
+                        nulla ratione cumque accusantium dolorum ipsum dicta ea nihil, sed dolore. Recusandae atque sapiente voluptatum
+                        tenetur possimus nulla veritatis nisi!</p>
+                        <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
+                </div>
+
+                <div class="about-col">
+                    <img src="UW_img/about.jpg">
+                </div>
+            </div>
+        </section>
+
+        <!-- -----Footer------ -->
+        <section class="footer">
+            <h4>About Us</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem architecto ea minus, quam aliquam quidem, ducimus<br>
+                dicta sequi reprehenderit deleniti libero voluptates repudiandae fugiat!</p>
+
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+                <i class="fa fa-slack"></i>
+                <i class="fa fa-whatsapp"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart-o"></i> by Godwin Adigun</p>
+        </section>
+
+<!-- Javascript for Toggle Menu -->
+        <script>
+            var navLinks = document.getElementById("navLinks");
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+        </script>
+    </body>
+</html>
